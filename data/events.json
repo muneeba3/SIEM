@@ -1,0 +1,185 @@
+[
+  {
+    "type": "failed_ssh",
+    "timestamp": "012Apr 30 21:01:01",
+    "raw": "2026-04-30T22:18:56.769196+01:00 spaceship sudo:  muneeba : TTY=pts/0 ; PWD=/home/muneeba/siem_project ; USER=root ; COMMAND=/usr/bin/bash -c 'cat >> /var/log/auth.log << EOF#012Apr 30 21:01:01 spaceship sshd[1001]: Failed password for root from 192.168.1.10 port 22 ssh2#012Apr 30 21:01:03 spaceship sshd[1002]: Failed password for root from 192.168.1.10 port 22 ssh2#012Apr 30 21:01:05 spaceship sshd[1003]: Failed password for root from 192.168.1.10 port 22 ssh2#012Apr 30 21:01:07 spaceship sshd[1004]: Failed password for root from 192.168.1.10 port 22 ssh2#012Apr 30 21:01:09 spaceship sshd[1005]: Failed password for root from 192.168.1.10 port 22 ssh2#012Apr 30 21:01:11 spaceship sshd[1006]: Failed password for root from 192.168.1.10 port 22 ssh2#012Apr 30 21:02:00 spaceship sshd[1007]: Failed password for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:02:02 spaceship sshd[1008]: Failed password for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:02:04 spaceship sshd[1009]: Failed password",
+    "user": "admin",
+    "ip": "45.33.32.156"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "012Apr 30 21:02:06",
+    "raw": "2026-04-30T22:18:56.775268+01:00 spaceship sudo:  muneeba : (command continued) for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:02:06 spaceship sshd[1010]: Failed password for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:02:08 spaceship sshd[1011]: Failed password for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:03:00 spaceship sshd[1012]: Accepted password for muneeba from 10.0.0.5 port 22 ssh2#012Apr 30 21:03:30 spaceship sshd[1013]: Accepted password for muneeba from 10.0.0.5 port 22 ssh2#012Apr 30 21:04:00 spaceship sudo[1014]: muneeba : COMMAND=/usr/bin/apt update#012Apr 30 21:04:10 spaceship sudo[1015]: muneeba : COMMAND=/usr/bin/systemctl status ssh#012Apr 30 21:05:00 spaceship sshd[1016]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:02 spaceship sshd[1017]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:04 spaceship sshd[1018]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:06 spaceship",
+    "user": "ubuntu",
+    "ip": "203.0.113.42"
+  },
+  {
+    "type": "success_ssh",
+    "timestamp": "012Apr 30 21:02:06",
+    "raw": "2026-04-30T22:18:56.775268+01:00 spaceship sudo:  muneeba : (command continued) for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:02:06 spaceship sshd[1010]: Failed password for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:02:08 spaceship sshd[1011]: Failed password for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:03:00 spaceship sshd[1012]: Accepted password for muneeba from 10.0.0.5 port 22 ssh2#012Apr 30 21:03:30 spaceship sshd[1013]: Accepted password for muneeba from 10.0.0.5 port 22 ssh2#012Apr 30 21:04:00 spaceship sudo[1014]: muneeba : COMMAND=/usr/bin/apt update#012Apr 30 21:04:10 spaceship sudo[1015]: muneeba : COMMAND=/usr/bin/systemctl status ssh#012Apr 30 21:05:00 spaceship sshd[1016]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:02 spaceship sshd[1017]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:04 spaceship sshd[1018]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:06 spaceship",
+    "user": "muneeba",
+    "ip": "10.0.0.5"
+  },
+  {
+    "type": "sudo_use",
+    "timestamp": "012Apr 30 21:02:06",
+    "raw": "2026-04-30T22:18:56.775268+01:00 spaceship sudo:  muneeba : (command continued) for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:02:06 spaceship sshd[1010]: Failed password for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:02:08 spaceship sshd[1011]: Failed password for admin from 45.33.32.156 port 22 ssh2#012Apr 30 21:03:00 spaceship sshd[1012]: Accepted password for muneeba from 10.0.0.5 port 22 ssh2#012Apr 30 21:03:30 spaceship sshd[1013]: Accepted password for muneeba from 10.0.0.5 port 22 ssh2#012Apr 30 21:04:00 spaceship sudo[1014]: muneeba : COMMAND=/usr/bin/apt update#012Apr 30 21:04:10 spaceship sudo[1015]: muneeba : COMMAND=/usr/bin/systemctl status ssh#012Apr 30 21:05:00 spaceship sshd[1016]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:02 spaceship sshd[1017]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:04 spaceship sshd[1018]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:06 spaceship"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "012Apr 30 21:05:08",
+    "raw": "2026-04-30T22:18:56.777237+01:00 spaceship sudo:  muneeba : (command continued) sshd[1019]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:08 spaceship sshd[1020]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:06:00 spaceship sshd[1021]: Accepted password for john from 172.16.0.1 port 22 ssh2#012EOF'",
+    "user": "ubuntu",
+    "ip": "203.0.113.42"
+  },
+  {
+    "type": "success_ssh",
+    "timestamp": "012Apr 30 21:05:08",
+    "raw": "2026-04-30T22:18:56.777237+01:00 spaceship sudo:  muneeba : (command continued) sshd[1019]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:05:08 spaceship sshd[1020]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2#012Apr 30 21:06:00 spaceship sshd[1021]: Accepted password for john from 172.16.0.1 port 22 ssh2#012EOF'",
+    "user": "john",
+    "ip": "172.16.0.1"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:01:01",
+    "raw": "Apr 30 21:01:01 spaceship sshd[1001]: Failed password for root from 192.168.1.10 port 22 ssh2",
+    "user": "root",
+    "ip": "192.168.1.10"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:01:03",
+    "raw": "Apr 30 21:01:03 spaceship sshd[1002]: Failed password for root from 192.168.1.10 port 22 ssh2",
+    "user": "root",
+    "ip": "192.168.1.10"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:01:05",
+    "raw": "Apr 30 21:01:05 spaceship sshd[1003]: Failed password for root from 192.168.1.10 port 22 ssh2",
+    "user": "root",
+    "ip": "192.168.1.10"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:01:07",
+    "raw": "Apr 30 21:01:07 spaceship sshd[1004]: Failed password for root from 192.168.1.10 port 22 ssh2",
+    "user": "root",
+    "ip": "192.168.1.10"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:01:09",
+    "raw": "Apr 30 21:01:09 spaceship sshd[1005]: Failed password for root from 192.168.1.10 port 22 ssh2",
+    "user": "root",
+    "ip": "192.168.1.10"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:01:11",
+    "raw": "Apr 30 21:01:11 spaceship sshd[1006]: Failed password for root from 192.168.1.10 port 22 ssh2",
+    "user": "root",
+    "ip": "192.168.1.10"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:02:00",
+    "raw": "Apr 30 21:02:00 spaceship sshd[1007]: Failed password for admin from 45.33.32.156 port 22 ssh2",
+    "user": "admin",
+    "ip": "45.33.32.156"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:02:02",
+    "raw": "Apr 30 21:02:02 spaceship sshd[1008]: Failed password for admin from 45.33.32.156 port 22 ssh2",
+    "user": "admin",
+    "ip": "45.33.32.156"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:02:04",
+    "raw": "Apr 30 21:02:04 spaceship sshd[1009]: Failed password for admin from 45.33.32.156 port 22 ssh2",
+    "user": "admin",
+    "ip": "45.33.32.156"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:02:06",
+    "raw": "Apr 30 21:02:06 spaceship sshd[1010]: Failed password for admin from 45.33.32.156 port 22 ssh2",
+    "user": "admin",
+    "ip": "45.33.32.156"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:02:08",
+    "raw": "Apr 30 21:02:08 spaceship sshd[1011]: Failed password for admin from 45.33.32.156 port 22 ssh2",
+    "user": "admin",
+    "ip": "45.33.32.156"
+  },
+  {
+    "type": "success_ssh",
+    "timestamp": "Apr 30 21:03:00",
+    "raw": "Apr 30 21:03:00 spaceship sshd[1012]: Accepted password for muneeba from 10.0.0.5 port 22 ssh2",
+    "user": "muneeba",
+    "ip": "10.0.0.5"
+  },
+  {
+    "type": "success_ssh",
+    "timestamp": "Apr 30 21:03:30",
+    "raw": "Apr 30 21:03:30 spaceship sshd[1013]: Accepted password for muneeba from 10.0.0.5 port 22 ssh2",
+    "user": "muneeba",
+    "ip": "10.0.0.5"
+  },
+  {
+    "type": "sudo_use",
+    "timestamp": "Apr 30 21:04:00",
+    "raw": "Apr 30 21:04:00 spaceship sudo[1014]: muneeba : COMMAND=/usr/bin/apt update"
+  },
+  {
+    "type": "sudo_use",
+    "timestamp": "Apr 30 21:04:10",
+    "raw": "Apr 30 21:04:10 spaceship sudo[1015]: muneeba : COMMAND=/usr/bin/systemctl status ssh"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:05:00",
+    "raw": "Apr 30 21:05:00 spaceship sshd[1016]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2",
+    "user": "ubuntu",
+    "ip": "203.0.113.42"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:05:02",
+    "raw": "Apr 30 21:05:02 spaceship sshd[1017]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2",
+    "user": "ubuntu",
+    "ip": "203.0.113.42"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:05:04",
+    "raw": "Apr 30 21:05:04 spaceship sshd[1018]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2",
+    "user": "ubuntu",
+    "ip": "203.0.113.42"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:05:06",
+    "raw": "Apr 30 21:05:06 spaceship sshd[1019]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2",
+    "user": "ubuntu",
+    "ip": "203.0.113.42"
+  },
+  {
+    "type": "failed_ssh",
+    "timestamp": "Apr 30 21:05:08",
+    "raw": "Apr 30 21:05:08 spaceship sshd[1020]: Failed password for ubuntu from 203.0.113.42 port 22 ssh2",
+    "user": "ubuntu",
+    "ip": "203.0.113.42"
+  },
+  {
+    "type": "success_ssh",
+    "timestamp": "Apr 30 21:06:00",
+    "raw": "Apr 30 21:06:00 spaceship sshd[1021]: Accepted password for john from 172.16.0.1 port 22 ssh2",
+    "user": "john",
+    "ip": "172.16.0.1"
+  }
+]

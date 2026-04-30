@@ -1,0 +1,23 @@
+[
+  {
+    "severity": "HIGH",
+    "type": "Brute Force Detected",
+    "ip": "45.33.32.156",
+    "attempts": 6,
+    "message": "6 failed SSH attempts from 45.33.32.156"
+  },
+  {
+    "severity": "HIGH",
+    "type": "Brute Force Detected",
+    "ip": "203.0.113.42",
+    "attempts": 7,
+    "message": "7 failed SSH attempts from 203.0.113.42"
+  },
+  {
+    "severity": "HIGH",
+    "type": "Brute Force Detected",
+    "ip": "192.168.1.10",
+    "attempts": 6,
+    "message": "6 failed SSH attempts from 192.168.1.10"
+  }
+]

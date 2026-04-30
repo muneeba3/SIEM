@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SIEM Dashboard</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <style>
+    body { font-family: sans-serif; background: #0f1117; color: #e2e8f0; margin: 0; padding: 20px; }
+    h1 { color: #63b3ed; }
+    h2 { color: #a0aec0; font-size: 16px; margin-top: 30px; }
+    .cards { display: flex; gap: 16px; margin: 20px 0; }
+    .card { background: #1a1f2e; padding: 20px; border-radius: 8px; flex: 1; }
+    .card h3 { color: #a0aec0; font-size: 13px; margin: 0 0 8px; }
+    .card .num { font-size: 28px; font-weight: 600; }
+    .high { color: #fc8181; }
+    .green { color: #68d391; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #2d3748; font-size: 14px; }
+    th { color: #a0aec0; font-weight: 500; }
+    .badge { padding: 3px 8px; border-radius: 4px; font-size: 12px; }
+    .badge.HIGH { background: #742a2a; color: #fc8181; }
+    .badge.MEDIUM { background: #7b341e; color: #f6ad55; }
+    button { margin-top: 20px; padding: 10px 20px; background: #2b6cb0; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+    button:hover { background: #2c5282; }
+  </style>
+</head>
+<body>
+  <h1>🛡 Linux SIEM Dashboard</h1>
+
+  <div class="cards">
+    <div class="card"><h3>Total Events</h3><div class="num" id="total-events">—</div></div>
+    <div class="card"><h3>Failed Logins</h3><div class="num high" id="failed-logins">—</div></div>
+    <div class="card"><h3>Successful Logins</h3><div class="num green" id="success-logins">—</div></div>
+    <div class="card"><h3>Active Alerts</h3><div class="num high" id="alert-count">—</div></div>
+  </div>
+
+  <h2>Event Overview</h2>
+  <canvas id="loginChart" height="80"></canvas>
+
+  <h2>Active Alerts</h2>
+  <table>
+    <thead><tr><th>Severity</th><th>Type</th><th>Details</th></tr></thead>
+    <tbody id="alerts-table"><tr><td colspan="3" style="color:#666">Loading...</td></tr></tbody>
+  </table>
+
+  <h2>Recent Events</h2>
+  <table>
+    <thead><tr><th>Type</th><th>User</th><th>IP</th><th>Time</th></tr></thead>
+    <tbody id="events-table"><tr><td colspan="4" style="color:#666">Loading...</td></tr></tbody>
+  </table>
+
+  <button onclick="refresh()">🔄 Refresh Logs</button>
+
+  <script>
+    async function loadData() {
+      const [evRes, alRes] = await Promise.all([
+        fetch('/api/events'), fetch('/api/alerts')
+      ]);
+      const events = await evRes.json();
+      const alerts = await alRes.json();
+
+      const failed = events.filter(e => e.type === 'failed_ssh');
+      const success = events.filter(e => e.type === 'success_ssh');
+      const sudo = events.filter(e => e.type === 'sudo_use');
+
+      document.getElementById('total-events').textContent = events.length;
+      document.getElementById('failed-logins').textContent = failed.length;
+      document.getElementById('success-logins').textContent = success.length;
+      document.getElementById('alert-count').textContent = alerts.length;
+
+      // Alerts table
+      const atbody = document.getElementById('alerts-table');
+      atbody.innerHTML = alerts.length === 0
+        ? '<tr><td colspan="3" style="color:#68d391">✅ No alerts detected</td></tr>'
+        : alerts.map(a =>
+            `<tr><td><span class="badge ${a.severity}">${a.severity}</span></td>
+             <td>${a.type}</td><td>${a.message}</td></tr>`
+          ).join('');
+
+      // Events table (last 20)
+      const etbody = document.getElementById('events-table');
+      etbody.innerHTML = events.slice(-20).reverse().map(e =>
+        `<tr><td>${e.type}</td><td>${e.user || '—'}</td>
+         <td>${e.ip || '—'}</td><td>${e.timestamp}</td></tr>`
+      ).join('') || '<tr><td colspan="4" style="color:#666">No events found</td></tr>';
+
+      // Chart
+      if (window.myChart) window.myChart.destroy();
+      window.myChart = new Chart(document.getElementById('loginChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Failed SSH', 'Successful SSH', 'Sudo Commands'],
+          datasets: [{
+            label: 'Count',
+            data: [failed.length, success.length, sudo.length],
+            backgroundColor: ['#fc8181', '#68d391', '#63b3ed'],
+            borderRadius: 6
+          }]
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { beginAtZero: true, ticks: { color: '#a0aec0' }, grid: { color: '#2d3748' } },
+            x: { ticks: { color: '#a0aec0' }, grid: { display: false } }
+          }
+        }
+      });
+    }
+
+    async function refresh() {
+      await fetch('/api/refresh');
+      loadData();
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
