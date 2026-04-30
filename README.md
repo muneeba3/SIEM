@@ -6,12 +6,6 @@ A custom Python-based SIEM (Security Information and Event Management) system bu
 
 ---
 
-## 📸 Dashboard Preview
-
-![SIEM Dashboard](dashboard_preview.png)
-
----
-
 ## 🎯 Project Overview
 
 This project mirrors real-world SOC Tier-1 workflows:
