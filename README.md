@@ -2,10 +2,6 @@
 
 A custom Python-based SIEM (Security Information and Event Management) system built from scratch — ingesting live Linux auth logs, detecting threats automatically, and visualising real-time security events on a Flask dashboard.
 
-> **Target Roles:** SOC Analyst · SIEM Engineer · Threat Analyst · **$70K–$170K**
-
----
-
 ## 🎯 Project Overview
 
 This project mirrors real-world SOC Tier-1 workflows:
